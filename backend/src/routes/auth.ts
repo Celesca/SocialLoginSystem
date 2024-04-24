@@ -6,4 +6,6 @@ authRouter.get('/', (req:Request, res:Response) => {
     res.json("Hello World!")
 })
 
+authRouter.get('/login/federated/google')
+
 module.exports = authRouter;
