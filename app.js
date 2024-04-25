@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
+var cors = require('cors');
 
 var SQLiteStore = require('connect-sqlite3')(session);
 
@@ -32,12 +33,15 @@ app.use(session({
   saveUninitialized: false,
   store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
 }));
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 app.use(passport.authenticate('session'));
 
 app.use('/', indexRouter);
 app.use('/', authRouter);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });

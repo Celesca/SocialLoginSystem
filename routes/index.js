@@ -9,10 +9,8 @@ router.get('/', function(req, res, next) {
     }
     next();
 }, function(req, res, next) {
-    db.all('SELECT * FROM todos WHERE owner_id = ?', [ req.user.id ], function(err, rows) {
-        if (err) { return next(err); }
-        res.json(rows);
-    });
+    console.log(req.user);
+    res.json("Logged in as " + req.user.name);
 });
 
 module.exports = router;
