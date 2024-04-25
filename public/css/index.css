@@ -1,0 +1,9 @@
+body {
+    background-color: linear-gradient(90deg, #f7f7f7, #f1f1f1);
+}
+
+.heading {
+    font-size: 72px;
+    color: #333;
+    text-align: center;
+}

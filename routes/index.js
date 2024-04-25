@@ -3,13 +3,16 @@ var db = require('../db');
 
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     if (!req.user) { 
         res.render('index');
     }
-    next();
-}, function(req, res, next) {
-    console.log(req.user);
+    else {
+        res.redirect('/home');
+    }
+})
+
+router.get('/home', function(req, res, next) {
     res.render('home');
 });
 
