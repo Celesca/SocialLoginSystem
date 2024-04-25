@@ -5,12 +5,12 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     if (!req.user) { 
-        return res.json("Not logged in")
+        res.render('index');
     }
     next();
 }, function(req, res, next) {
     console.log(req.user);
-    res.json("Logged in as " + req.user.name);
+    res.render('home');
 });
 
 module.exports = router;
