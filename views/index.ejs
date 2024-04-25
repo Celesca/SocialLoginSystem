@@ -10,7 +10,19 @@
     <header>
     <h1 class="heading">Welcome to Celescadev Platform</h1>
     </header>
-    <h1>Login</h1>
+    <h1>Login in to continue</h1>
+    <form action="/login/password" method="post">
+        <section>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+        </section>
+        <section>
+            <label for="current-password">Password</label>
+            <input id="current-password" name="password" type="password" autocomplete="current-password" required>
+        </section>
+        <button type="submit">Sign in</button>
+    </form>
+    or continue with
     <a href="/login/federated/google">Sign in with Google</a>
 </body>
 </html>
