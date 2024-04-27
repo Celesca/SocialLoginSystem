@@ -12,7 +12,8 @@ var cors = require('cors');
 var SQLiteStore = require('connect-sqlite3')(session);
 
 var indexRouter = require('./routes/index');
-var authRouter = require('./routes/auth');
+var googleAuthRouter = require('./routes/googleAuth');
+var basicAuthRouter = require('./routes/basicAuth');
 
 var app = express();
 
@@ -38,7 +39,8 @@ app.use(cors());
 app.use(passport.authenticate('session'));
 
 app.use('/', indexRouter);
-app.use('/', authRouter);
+app.use('/', googleAuthRouter);
+app.use('/', basicAuthRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
