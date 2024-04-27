@@ -12,13 +12,13 @@ var cors = require('cors');
 var SQLiteStore = require('connect-sqlite3')(session);
 
 var indexRouter = require('./routes/index');
-var authRouter = require('./routes/auth');
+var googleAuthRouter = require('./routes/googleAuth');
+var basicAuthRouter = require('./routes/basicAuth');
 
 var app = express();
 
 app.locals.pluralize = require('pluralize');
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -33,14 +33,14 @@ app.use(session({
   saveUninitialized: false,
   store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
 }));
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
+
+app.use(cors());
+
 app.use(passport.authenticate('session'));
 
 app.use('/', indexRouter);
-app.use('/', authRouter);
+app.use('/', googleAuthRouter);
+app.use('/', basicAuthRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

@@ -5,10 +5,6 @@ var db = require('../db');
 
 var router = express.Router()
 
-router.post('/login', function(req, res, next) {
-    res.render('login');
-});
-
 router.get('/login/federated/google', passport.authenticate('google'));
 
 passport.use(new GoogleStrategy({

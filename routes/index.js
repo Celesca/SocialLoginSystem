@@ -3,14 +3,17 @@ var db = require('../db');
 
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     if (!req.user) { 
-        return res.json("Not logged in")
+        res.render('index');
     }
-    next();
-}, function(req, res, next) {
-    console.log(req.user);
-    res.json("Logged in as " + req.user.name);
+    else {
+        res.redirect('/home');
+    }
+})
+
+router.get('/home', function(req, res, next) {
+    res.render('home');
 });
 
 module.exports = router;
