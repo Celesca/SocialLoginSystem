@@ -2,13 +2,29 @@
 
 ### Social Login System is the web service that use Passport.js and OAuth from Google and Facebook to login into the system.
 
+The project require you to create your own .env file for your own secret key of google and facebook OAuth
+
+### Manual Installation
+
+`git clone github.com/Celesca/SocialLoginSystem.git`
+
+`cd SocialLoginSystem`
+
+`npm install`
+
+`npm start` or `npm run dev` for nodemon
+
+the server will started at port 3000.
+
 ### Installation via Docker
 
 `git clone github.com/Celesca/SocialLoginSystem.git`
 
 `cd SocialLoginSystem`
 
-`docker-compose up --build`
+`docker build -t socialloginsystem .`
+
+`docker run -p 3000:3000 socialloginsystem`
 
 ---
 
@@ -68,4 +84,3 @@ create the .env and insert
 - FACEBOOK_CLIENT_ID = __INSERT_APP_ID_HERE__
 - FACEBOOK_CLIENT_SECRET = __INSERT_APP_SECRET_HERE__
 - PORT = 3000 (or your choice)
- 
