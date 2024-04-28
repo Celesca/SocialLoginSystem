@@ -1,10 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
 body {
     text-align: center;
-    background-color: linear-gradient(90deg, #f7f7f7, #f1f1f1);
+    background: linear-gradient(#e66465, #9198e5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
 }
 
 .heading {
-    font-size: 72px;
-    color: #333;
+    padding: 20px;
+    font-size: 40px;
+    color: white;
     text-align: center;
+}
+
+h2 {
+    margin: 20px 0;
+    color: rgb(233, 255, 136);
+}
+
+.container {
+    margin: 20px auto;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.username-form , .password-form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.username-form label, .password-form label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.username-form input, .password-form input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.login-btn, .logout-btn {
+    margin: 15px;
+    padding: 10px 60px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: aquamarine;
+}
+
+.login-btn:hover, .logout-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.1s linear;
+}
+
+.sign-up-form {
+    margin-bottom: 10px;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+    border:0;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.social-btn img {
+    margin-right: 10px;
+}
+
+.social-btn a {
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.1s linear;
 }
