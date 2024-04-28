@@ -16,6 +16,10 @@ router.get('/home', function(req, res, next) {
     res.render('home');
 });
 
+router.get('/signup', function(req, res) {
+    res.render('signup');
+});
+
 router.post('/logout', function(req, res, next) {
     req.logout(function(err) {
       if (err) { return next(err); }

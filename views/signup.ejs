@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <form action="/login/password" method="post">
-        <section>
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" autocomplete="username" required autofocus>
-        </section>
-        <section>
-            <label for="current-password">Password</label>
-            <input id="current-password" name="password" type="password" autocomplete="current-password" required>
-        </section>
-        <section>
-            <label for="re-enter-password">Re-enter Password</label>
-            <input id="re-enter-password" name="re-enter-password" type="password" autocomplete="re-enter-password" required>
-        </section>
-        <button type="submit">Sign in</button>
-    </form>
+    <header>
+        <h1 class="heading">Welcome to Celescadev Platform</h1>
+    </header>
+    <h2>Login in to continue</h2>
+    <div class="container">
+        <form class="basic-form" action="/signup" method="post">
+            <section class="username-form">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+            </section>
+            <section class="password-form">
+                <label for="current-password">Password</label>
+                <input id="current-password" name="password" type="password" autocomplete="current-password" required>
+            </section>
+            <section class="password-form" style="margin-top: 20px;">
+                <label for="re-password">Re-Password</label>
+                <input id="re-password" name="re-password" type="password" autocomplete="current-password" required>
+            </section>
+            <button class="login-btn" type="submit">Sign up</button>
+        </form>
+       
+    </div>
 </body>
 </html>
