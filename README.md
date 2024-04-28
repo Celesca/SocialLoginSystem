@@ -10,15 +10,22 @@
 
 `docker-compose up --build`
 
+---
+
 ### Systems
 
+* Login with the username and password in the homepage.
 * Login with the Google account to use in the homepage.
 * Login with the Facebook account to use in the homepage.
+
+---
 
 ### Google Authentication API Key
 
 First, you need to have your GCP API key by creating your own service.
 You need to following these steps. Reference from Passport.js
+
+Goes to https://console.cloud.google.com/
 
 Register App
 In the previous section, you added a route which redirects the user to Google when they click "Sign in with Google." In this section, you'll register the app with Google so that it can make use of Google's APIs.
@@ -41,7 +48,24 @@ Click Add URI under Authorized Redirect URIs. Enter http://localhost:3000/oauth2
 
 Click Create to create the OAuth client. The following screen will display your client ID and secret. Proceed to configure the strategy.
 
-Finally, create the .env and insert
+---
 
-GOOGLE_CLIENT_ID=__INSERT_CLIENT_ID_HERE__
-GOOGLE_CLIENT_SECRET=__INSERT_CLIENT_SECRET_HERE__
+### Facebook Authentication API Key
+
+goes to https://developers.facebook.com/
+
+Create the app and select `Authenticate and request data from users with Facebook Login` and No, I'm not building a game
+
+Then get your App ID and App Secret to then put it in your .env file
+
+---
+
+### .ENV Structure
+create the .env and insert
+
+- GOOGLE_CLIENT_ID = __INSERT_CLIENT_ID_HERE__
+- GOOGLE_CLIENT_SECRET = __INSERT_CLIENT_SECRET_HERE__
+- FACEBOOK_CLIENT_ID = __INSERT_APP_ID_HERE__
+- FACEBOOK_CLIENT_SECRET = __INSERT_APP_SECRET_HERE__
+- PORT = 3000 (or your choice)
+ 
