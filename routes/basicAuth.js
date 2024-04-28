@@ -38,13 +38,6 @@ passport.use(new LocalStrategy(function verify(username, password, cb) {
     });
   });
 
-  router.post('/logout', function(req, res, next) {
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
-    });
-  });
-
   router.post('/signup', function(req, res, next) {
     var salt = crypto.randomBytes(16);
     crypto.pbkdf2(req.body.password, salt, 310000, 32, 'sha256', function(err, hashedPassword) {

@@ -14,6 +14,7 @@ var SQLiteStore = require('connect-sqlite3')(session);
 var indexRouter = require('./routes/index');
 var googleAuthRouter = require('./routes/googleAuth');
 var basicAuthRouter = require('./routes/basicAuth');
+var facebookAuthRouter = require('./routes/facebookAuth');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(passport.authenticate('session'));
 
 app.use('/', indexRouter);
 app.use('/', googleAuthRouter);
+app.use('/', facebookAuthRouter);
 app.use('/', basicAuthRouter);
 
 app.use(function(req, res, next) {
